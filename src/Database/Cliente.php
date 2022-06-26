@@ -86,7 +86,7 @@ class cliente
     {
         $pdo = Connection::get();
 
-        $sql = 'INSERT INTO `cliente` (`nome`, `data_nascimento`) values(?, ?);';
+        $sql = 'INSERT INTO `cliente` (`nome`, `idade`) values(?, ?);';
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             $nome,

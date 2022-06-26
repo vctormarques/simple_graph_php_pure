@@ -22,7 +22,7 @@ try {
                         'idade' => Type::nonNull(Type::int()),                        
                     ],
                     'resolve' => function ($value, $args){
-                        return Cliente::insert($args['nome'], $args['idade'], 1);
+                        return Cliente::insert($args['nome'], $args['idade']);
                     }
                 ],
                 'updateCliente' => [
@@ -33,7 +33,7 @@ try {
                         'idade' => Type::nonNull(Type::int()),                        
                     ],
                     'resolve' => function ($value, $args){
-                        return Cliente::update($args['id'], $args['nome'], $args['idade'], 1);
+                        return Cliente::update($args['id'], $args['nome'], $args['idade']);
                     }
                 ]
             ]
