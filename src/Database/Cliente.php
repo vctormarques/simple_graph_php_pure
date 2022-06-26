@@ -101,4 +101,25 @@ class cliente
 
         return $stmt->fetch();
     }
+
+    public static function update($id, $nome, $idade)
+    {
+        $pdo = Connection::get();
+
+        $sql = 'UPDATE `cliente` SET `nome` = ?, `idade` =? WHERE id = ?;';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            $nome,
+            $idade,
+            $id,
+        ]);
+
+        $sql = 'SELECT * FROM `cliente` WHERE id=?';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            $id
+        ]);
+
+        return $stmt->fetch();
+    }
 }

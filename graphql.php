@@ -18,11 +18,22 @@ try {
                 'createCliente' => [
                     'type' => AppType::cliente(),
                     'args' => [
-                        'name' => Type::nonNull(Type::string()),
-                        'email' => Type::nonNull(Type::string()),                        
+                        'nome' => Type::nonNull(Type::string()),
+                        'idade' => Type::nonNull(Type::int()),                        
                     ],
                     'resolve' => function ($value, $args){
                         return Cliente::insert($args['nome'], $args['idade'], 1);
+                    }
+                ],
+                'updateCliente' => [
+                    'type' => AppType::cliente(),
+                    'args' => [
+                        'id' => Type::nonNull(Type::int()),
+                        'nome' => Type::nonNull(Type::string()),
+                        'idade' => Type::nonNull(Type::int()),                        
+                    ],
+                    'resolve' => function ($value, $args){
+                        return Cliente::update($args['id'], $args['nome'], $args['idade'], 1);
                     }
                 ]
             ]

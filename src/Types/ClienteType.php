@@ -28,7 +28,7 @@ class ClienteType extends ObjectType
                     'description' => 'Nome do cliente',
                     'type' => Type::string(),
                 ],
-                'idate' => [
+                'idade' => [
                     'description' => 'Idade do cliente',
                     'type' => Type::int(),
                 ],
