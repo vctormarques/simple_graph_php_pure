@@ -5,6 +5,15 @@
 - 1 tabela de cliente
 - 1 tabela de telefone e o vinculo de telefone x Cliente
 
+### 🚀  Tecnologias Utilizadas
+O projeto foi desenvolvido utilizando as seguintes tecnologias
+
+- PHP 8.0
+- PDO
+- MySql
+- [webonyx/graphql-php _ 14.11](https://github.com/webonyx/graphql-php)
+
+
 #### Para realizar o cadatro
 ```
 mutation createCliente($nome: String!, $idade: Int! ) {
